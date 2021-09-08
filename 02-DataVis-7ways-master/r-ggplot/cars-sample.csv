@@ -1,0 +1,98 @@
+,Car,Manufacturer,MPG,Weight
+5,torino,ford,17,3449
+6,galaxie 500,ford,15,4341
+13,torino (sw),ford,0,4034
+18,mustang boss 302,ford,0,3353
+21,corona mark ii,toyota,24,2372
+24,maverick,ford,21,2587
+30,2002,bmw,26,2234
+32,f250,ford,10,4615
+38,corona,toyota,25,2228
+39,pinto,ford,25,2046
+44,torino 500,ford,19,3302
+48,galaxie 500,ford,14,4154
+51,country squire (sw),ford,13,4746
+56,mustang,ford,18,3139
+61,corolla 1200,toyota,31,1773
+65,corona hardtop,toyota,24,2278
+69,pinto runabout,ford,21,2226
+73,galaxie 500,ford,14,4129
+82,gran torino (sw),ford,13,4294
+88,pinto (sw),ford,22,2395
+90,corona mark ii (sw),toyota,23,2506
+92,corolla 1600 (sw),toyota,27,2100
+96,gran torino,ford,14,4042
+100,ltd,ford,13,4363
+108,maverick,ford,18,3021
+112,country,ford,12,4906
+116,carina,toyota,20,2279
+120,pinto,ford,19,2310
+131,mark ii,toyota,20,2807
+134,maverick,ford,21,2875
+138,pinto,ford,26,2451
+139,corolla 1200,toyota,32,1836
+144,gran torino,ford,16,4141
+147,gran torino (sw),ford,14,4638
+152,corona,toyota,31,1649
+157,civic,honda,24,2489
+163,maverick,ford,15,3158
+167,ltd,ford,14,4657
+174,mustang ii,ford,13,3169
+175,corolla,toyota,29,2171
+176,pinto,ford,23,2639
+179,corona,toyota,24,2702
+182,pinto,ford,18,2984
+189,civic cvcc,honda,33,1795
+198,gran torino,ford,14.5,4215
+201,maverick,ford,24,3012
+206,civic,honda,33,1795
+208,granada ghia,ford,18,3574
+213,corolla,toyota,28,2155
+214,pinto,ford,26.5,2565
+218,mark ii,toyota,19,2930
+219,280s,mercedes,16.5,3820
+222,f108,ford,13,3870
+224,accord cvcc,honda,31.5,2045
+236,granada,ford,18.5,3525
+240,thunderbird,ford,16,4335
+243,corolla liftback,toyota,26,2265
+244,mustang ii 2+2,ford,25.5,2755
+250,320i,bmw,21.5,2600
+253,fiesta,ford,36.1,1800
+256,civic cvcc,honda,36.1,1800
+262,fairmont (auto),ford,20.2,2965
+263,fairmont (man),ford,25.1,2720
+272,futura,ford,18.1,3205
+275,corona,toyota,27.5,2560
+278,celica gt liftback,toyota,21.1,2515
+287,accord lx,honda,29.5,2135
+290,fairmont 4,ford,22.3,2890
+294,ltd landau,ford,17.6,3725
+298,country squire (sw),ford,15.5,4054
+305,300d,mercedes,25.4,3530
+318,corolla tercel,toyota,38.1,1968
+322,fairmont,ford,26.4,2870
+326,corona liftback,toyota,29.8,2711
+329,corolla,toyota,32.2,2265
+336,240d,mercedes,30,3250
+337,civic 1500 gl,honda,44.6,1850
+344,mustang cobra,ford,23.6,2905
+345,accord,honda,32.4,2290
+351,starlet,toyota,39.1,1755
+353,civic 1300,honda,35.1,1760
+356,tercel,toyota,37.7,2050
+359,escort 4w,ford,34.4,2045
+360,escort 2h,ford,29.9,2380
+363,prelude,honda,33.7,2210
+364,corolla,toyota,32.4,2350
+370,cressida,toyota,25.4,2900
+374,granada gl,ford,20.2,3060
+382,fairmont futura,ford,24,2865
+390,accord,honda,36,2205
+391,corolla,toyota,34,2245
+392,civic,honda,38,1965
+393,civic (auto),honda,32,1965
+398,granada l,ford,22,2835
+399,celica gt,toyota,32,2665
+402,mustang gl,ford,27,2790
+405,ranger,ford,28,2625

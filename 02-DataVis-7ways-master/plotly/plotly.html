@@ -1,0 +1,66 @@
+<head>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div id="myDiv" style="width: 480px; height: 400px;">
+        <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+    <script>
+
+        function makeplot() {
+            Plotly.d3.csv("https://moneill0.github.io/02-DataVis-7ways/cars-sample.csv", function (data) { processData(data) });
+
+        };
+
+        function processData(allRows) {
+
+            console.log(allRows);
+            var x = [], y = [], z = [];
+
+            for (var i = 0; i < allRows.length; i++) {
+                row = allRows[i];
+                x.push(row['Weight']);
+                y.push(row['MPG']);
+                z.push(row['Manufacturer']);
+            }
+            console.log('X', x, 'Y', y, 'Z', z, 'SD');
+            makePlotly(x, y, z);
+        }
+
+        function makePlotly(x, y, z) {
+            var plotDiv = document.getElementById("plot");
+            xaxis: {
+                nticks: 7
+                title: {
+                    text: 'x Axis'
+                }
+            }
+            var traces = [{
+                x: x,
+                y: y,
+                z: z,
+                mode: 'markers',
+                opacity: 0.5,
+                type: 'scatter',
+                //size: x,
+                //color: y,
+                marker: {
+                    size: x.map(w => w / 200),
+                    color: 'red'
+                },
+
+            }
+
+
+            ]
+        
+
+        Plotly.newPlot('myDiv', traces,
+            { title: 'Correlation between Vehicle Weight and MPG' });
+        }
+
+        makeplot();
+    </script>
+</body>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+    <script>
+
+        var w = 1400, h = 700
+        var svg = d3.select('body').append('svg')
+        svg.attr('width', w).attr('height', h);
+
+
+        let xscale = d3.scaleLinear()
+            .domain([1600, 5300])
+            .range([50, w - 200])
+
+        var xAxis = svg.append("g")
+            .attr("transform", "translate(0," + 600 + ")") //2nd num lower to mmove x-scale up
+            .call(d3.axisBottom(xscale).ticks(4).tickSize(-h))
+
+
+        let yscale = d3.scaleLinear()
+            .domain([10, 48])
+            .range([600, -5])
+
+        var yAxis = svg.append("g")
+            .attr("transform", "translate(50," + 0 + ")") //first num higher to move y scale to the right, 2nd color higher to move down
+            //.call(d3.axisLeft(yscale))
+            .call(d3.axisLeft(yscale).ticks(3).tickSize(-w))
+
+
+        var rectangle = svg.append("rect")
+            .attr("x", 1200)
+            .attr("y", 10)
+            .attr("width", 200)
+            .attr("height", h)
+            .attr("fill", "white")
+
+
+        //Manufacturer Legend
+        svg.append("text")
+            .attr("x", w - 140)
+            .attr("y", 100)
+            .attr("font-size", "20px")
+            .text("Manufacturer")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 130)
+            .attr("r", 10)
+            .attr("fill", "blue")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 135)
+            .attr("font-size", 15)
+            .text("bmw")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 160)
+            .attr("r", 10)
+            .attr("fill", "orange")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 165)
+            .attr("font-size", 15)
+            .text("ford")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 190)
+            .attr("r", 10)
+            .attr("fill", "lightgreen")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 195)
+            .attr("font-size", 15)
+            .text("honda")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 220)
+            .attr("r", 10)
+            .attr("fill", "pink")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 225)
+            .attr("font-size", 15)
+            .text("mercedes")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 250)
+            .attr("r", 10)
+            .attr("fill", "lavender")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 255)
+            .attr("font-size", 15)
+            .text("toyota")
+
+        //Weight Legend
+        svg.append("text")
+            .attr("x", w - 140)
+            .attr("y", 320)
+            .attr("font-size", "20px")
+            .text("Weight")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 345)
+            .attr("r", 4)
+            .attr("fill", "grey")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 350)
+            .attr("font-size", 15)
+            .text("2000")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 375)
+            .attr("r", 7)
+            .attr("fill", "grey")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 380)
+            .attr("font-size", 15)
+            .text("3000")
+
+        svg.append("circle")
+            .attr("cx", w - 130)
+            .attr("cy", 405)
+            .attr("r", 9)
+            .attr("fill", "grey")
+            .style("opacity", 0.5)
+
+        svg.append("text")
+            .attr("x", w - 116)
+            .attr("y", 410)
+            .attr("font-size", 15)
+            .text("4000")
+
+        //Axes labels
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 16)
+            .attr("x", -280)
+            .attr("font-weight", "bold")
+            .style("text-anchor", "middle")
+            .attr("font-size", "20px")
+            .text("MPG");
+
+        svg.append("text")
+            .attr("y", 630)
+            .attr("x", 640)
+            .attr("font-weight", "bold")
+            .style("text-anchor", "middle")
+            .text("Weight")
+            .attr("font-size", "20px")
+
+        color = d3.scaleOrdinal(d3.schemeCategory10)
+            .domain(['bmw', 'ford', 'honda', 'mercedes', 'toyota', ' ', ' ', ' ', ' ', ' '])
+
+        size = d3.scaleLinear()
+            .domain([2000, 3000, 4000])
+            .range([4, 6, 9])
+
+
+
+        function displayData() {
+            var box = d3
+                .append("rect")
+                .attr("x", 200)
+                .attr("y", 200)
+                .attr("fill", "blue")
+                .attr("height", 100)
+                .attr("width", 100)
+        }
+
+        d3.csv("https://moneill0.github.io/02-DataVis-7ways/cars-sample.csv", function (data) {
+            var dots = svg
+                .append('circle')
+                .attr('cx', d => xscale(data['Weight']))
+                .attr('cy', d => yscale(data['MPG']))
+                .attr('r', size(data['Weight']))
+                .attr("fill", "blue")
+                .style("fill", color(data['Manufacturer']))
+                .style("opacity", 0.5)
+            //.on("click", function () { displayData() })
+            console.log(data);
+        });
+
+
+
+
+    </script>
+</body>
